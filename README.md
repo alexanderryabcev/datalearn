@@ -6,8 +6,6 @@
 
 [Homework for Module 1](https://github.com/alexanderryabcev/datalearn/tree/main/Module%201)
 
----
-
 ## Module 2. Базы данных и SQL
 
 [Homework for Module 2](https://github.com/alexanderryabcev/datalearn/tree/main/Module%202)
