@@ -1,0 +1,10 @@
+-- public."returns" definition
+
+-- Drop table
+
+DROP TABLE IF EXISTS public."returns";
+
+CREATE TABLE public."returns" (
+	returned varchar(10) NOT NULL,
+	order_id varchar(25) NOT NULL
+);

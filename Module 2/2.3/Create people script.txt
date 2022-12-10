@@ -1,0 +1,11 @@
+-- public.people definition
+
+-- Drop table
+
+DROP TABLE IF EXISTS public.people;
+
+CREATE TABLE public.people (
+	person varchar(17) NOT NULL,
+	region varchar(7) NOT NULL,
+	CONSTRAINT people_pkey PRIMARY KEY (person)
+);
