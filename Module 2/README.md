@@ -91,4 +91,4 @@ Average Discount
 
 Ссылка на SQL скрипт для создания схемы и таблиц на базе модели Звезда.
 
-[SQL Скрипт]()
+[SQL Скрипт](https://github.com/alexanderryabcev/datalearn/blob/main/Module%202/2.4/star/SQL.txt)
