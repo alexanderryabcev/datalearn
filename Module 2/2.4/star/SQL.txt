@@ -1,0 +1,130 @@
+CREATE SCHEMA star;
+
+
+
+-- ************************************** star.Customer_dim
+
+CREATE TABLE star.Customer_dim
+(
+ customer_id   varchar(30) NOT NULL,
+ customer_name varchar(30) NOT NULL,
+ CONSTRAINT PK_1 PRIMARY KEY ( customer_id )
+);
+
+
+-- ************************************** star.Location_dim
+
+CREATE TABLE star.Location_dim
+(
+ location_id serial NOT NULL,
+ country     varchar(30) NOT NULL,
+ city        varchar(30) NOT NULL,
+ "state"       varchar(30) NOT NULL,
+ postal_code int NOT NULL,
+ region      varchar(30) NOT NULL,
+ CONSTRAINT PK_2 PRIMARY KEY ( location_id )
+);
+
+-- ************************************** star.Order_date_dim
+
+CREATE TABLE star.Order_date_dim
+(
+ order_date date NOT NULL,
+ year       int NOT NULL,
+ quater     int NOT NULL,
+ month      int NOT NULL,
+ week       int NOT NULL,
+ day        int NOT NULL,
+ CONSTRAINT PK_3 PRIMARY KEY ( order_date )
+);
+
+-- ************************************** star.product_dim
+
+CREATE TABLE star.product_dim
+(
+ id           serial NOT NULL,
+ product_id   varchar(30) NOT NULL,
+ category     varchar(30) NOT NULL,
+ sub_category varchar(50) NOT NULL,
+ product_name varchar(150) NOT NULL,
+ CONSTRAINT PK_4 PRIMARY KEY ( id )
+);
+
+
+-- ************************************** star.segment_dim
+
+CREATE TABLE star.segment_dim
+(
+ segment_id   serial NOT NULL,
+ segment_name varchar(30) NOT NULL,
+ CONSTRAINT PK_5 PRIMARY KEY ( segment_id )
+);
+
+-- ************************************** star.Ship_date_dim_
+
+CREATE TABLE star.Ship_date_dim_
+(
+ Ship_date date NOT NULL,
+ year      int NOT NULL,
+ quater    int NOT NULL,
+ month     int NOT NULL,
+ week      int NOT NULL,
+ day       int NOT NULL,
+ CONSTRAINT PK_6 PRIMARY KEY ( Ship_date )
+);
+
+-- ************************************** star.sales_fact
+DROP TABLE star.sales_fact;
+
+CREATE TABLE star.sales_fact
+(
+ row_id      serial NOT NULL,
+ order_id    varchar(30) NOT NULL,
+ location_id serial NOT NULL,
+ segment_id  serial NOT NULL,
+ customer_id varchar(30) NOT NULL,
+ order_date  date NOT NULL,
+ ship_date   date NOT NULL,
+ product_id  int NOT NULL,
+ sales       decimal(8,3) NOT NULL,
+ quantity    int NOT NULL,
+ discount    decimal(5,2) NOT NULL,
+ profit      decimal(10,5) NOT NULL,
+ CONSTRAINT PK_7 PRIMARY KEY ( row_id ),
+ CONSTRAINT FK_13 FOREIGN KEY ( product_id ) REFERENCES star.product_dim ( product_id ),
+ CONSTRAINT FK_14 FOREIGN KEY ( ship_date ) REFERENCES star.date_dim ( date ),
+ CONSTRAINT FK_15 FOREIGN KEY ( order_date ) REFERENCES star.date_dim ( date ),
+ CONSTRAINT FK_16 FOREIGN KEY ( customer_id ) REFERENCES star.Customer_dim ( customer_id ),
+ CONSTRAINT FK_17 FOREIGN KEY ( segment_id ) REFERENCES star.segment_dim ( segment_id ),
+ CONSTRAINT FK_18 FOREIGN KEY ( location_id ) REFERENCES star.Location_dim ( location_id )
+);
+
+CREATE INDEX FK_2 ON star.sales_fact
+(
+ product_id
+);
+
+CREATE INDEX FK_3 ON star.sales_fact
+(
+ Ship_date
+);
+
+CREATE INDEX FK_4 ON star.sales_fact
+(
+ order_date
+);
+
+CREATE INDEX FK_5 ON star.sales_fact
+(
+ customer_id
+);
+
+CREATE INDEX FK_6 ON star.sales_fact
+(
+ segment_id
+);
+
+CREATE INDEX FK_7 ON star.sales_fact
+(
+ location_id
+);

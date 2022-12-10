@@ -4,23 +4,25 @@
 
 ### Создание таблиц.
 
-Order table.
+#### Order table.
 
 ![Order](https://github.com/alexanderryabcev/datalearn/blob/main/Module%202/2.3/Create_order.png)
 
-[Ссылка на скрипт.](https://github.com/alexanderryabcev/datalearn/blob/main/Module%202/2.3/Create_order%20script)
+[Ссылка на скрипт.](https://github.com/alexanderryabcev/datalearn/blob/main/Module%202/2.3/Create_order%20script.txt)
 
-People table
+
+#### People table
 
 ![People](https://github.com/alexanderryabcev/datalearn/blob/main/Module%202/2.3/Create_people.png)
 
-[Ссылка на скрипт.](https://github.com/alexanderryabcev/datalearn/blob/main/Module%202/2.3/Create%20people%20script)
+[Ссылка на скрипт.](https://github.com/alexanderryabcev/datalearn/blob/main/Module%202/2.3/Create%20people%20script.txt)
 
-Returned table
+
+#### Returned table
 
 ![Retuns](https://github.com/alexanderryabcev/datalearn/blob/main/Module%202/2.3/Create_returned.png)
 
-[Ссылка на скрипт.](https://github.com/alexanderryabcev/datalearn/blob/main/Module%202/2.3/Create%20returned)
+[Ссылка на скрипт.](https://github.com/alexanderryabcev/datalearn/blob/main/Module%202/2.3/Create%20returned.txt)
 
 ---
 
@@ -54,6 +56,39 @@ Average Discount
 
 ![Average Discount](https://github.com/alexanderryabcev/datalearn/blob/main/Module%202/2.3/Average_Discount%20.png)
 
+---
+
+## 2.4 Модели Данных
+
+### Модель данных Snowflake
+
+Концептуальная Модель.
+
+![Концептуальная](https://github.com/alexanderryabcev/datalearn/blob/main/Module%202/2.4/snowflake/%D0%BA%D0%BE%D0%BD%D0%B5%D0%BF%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F.png)
+
+Логическая Модель.
+
+![Логическая](https://github.com/alexanderryabcev/datalearn/blob/main/Module%202/2.4/snowflake/logical.png)
+
+Физическая Модель.
+
+![Физическая](https://github.com/alexanderryabcev/datalearn/blob/main/Module%202/2.4/snowflake/physical.png)
 
 
+### Модель данных Star
 
+Концептуальная Модель.
+
+![Концептуальная](https://github.com/alexanderryabcev/datalearn/blob/main/Module%202/2.4/star/%D0%BA%D0%BE%D0%BD%D1%86%D0%B5%D0%BF%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F.png)
+
+Логическая Модель.
+
+![Логическая](https://github.com/alexanderryabcev/datalearn/blob/main/Module%202/2.4/star/logical.png)
+
+Физическая Модель.
+
+![Физическая](https://github.com/alexanderryabcev/datalearn/blob/main/Module%202/2.4/star/physical.png)
+
+Ссылка на SQL скрипт для создания схемы и таблиц на базе модели Звезда.
+
+[SQL Скрипт]()
