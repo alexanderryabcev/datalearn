@@ -28,31 +28,31 @@
 
 ### SQL операции.
 
-Total sales, profits and profit ratio
+**Total sales, profits and profit ratio**
 
 ![Общие продажи](https://github.com/alexanderryabcev/datalearn/blob/main/Module%202/2.3/Total_Sales%2C%20Profit%2C%20Profit_Ratio%20.png)
 
-Sales and Profits per Customer
+**Sales and Profits per Customer**
 
 ![Sales and Profits per Customer](https://github.com/alexanderryabcev/datalearn/blob/main/Module%202/2.3/Sales_and_Profit_by_Customer.png)
 
-Sales per Region
+**Sales per Region**
 
 ![Sales per Region](https://github.com/alexanderryabcev/datalearn/blob/main/Module%202/2.3/Sales_per_Region.png)
 
-Sales per Order ID
+**Sales per Order ID**
 
 ![Sales per Order ID](https://github.com/alexanderryabcev/datalearn/blob/main/Module%202/2.3/Sales_per_order_id%20.png)
 
-Profits per Order ID
+**Profits per Order ID**
 
 ![Profits per Order ID](https://github.com/alexanderryabcev/datalearn/blob/main/Module%202/2.3/Profit_per_order_id%20.png)
 
-Monthly Sales by category
+**Monthly Sales by category**
 
 ![Monthly Sales by category](https://github.com/alexanderryabcev/datalearn/blob/main/Module%202/2.3/Monthly_sales_per_month.png)
 
-Average Discount
+**Average Discount**
 
 ![Average Discount](https://github.com/alexanderryabcev/datalearn/blob/main/Module%202/2.3/Average_Discount%20.png)
 
@@ -64,30 +64,30 @@ Average Discount
 
 ### Модель данных Snowflake
 
-Концептуальная Модель.
+**Концептуальная Модель.**
 
 ![Концептуальная](https://github.com/alexanderryabcev/datalearn/blob/main/Module%202/2.4/snowflake/%D0%BA%D0%BE%D0%BD%D0%B5%D0%BF%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F.png)
 
-Логическая Модель.
+**Логическая Модель.**
 
 ![Логическая](https://github.com/alexanderryabcev/datalearn/blob/main/Module%202/2.4/snowflake/logical.png)
 
-Физическая Модель.
+**Физическая Модель.**
 
 ![Физическая](https://github.com/alexanderryabcev/datalearn/blob/main/Module%202/2.4/snowflake/physical.png)
 
 
 ### Модель данных Star
 
-Концептуальная Модель.
+**Концептуальная Модель.**
 
 ![Концептуальная](https://github.com/alexanderryabcev/datalearn/blob/main/Module%202/2.4/star/%D0%BA%D0%BE%D0%BD%D1%86%D0%B5%D0%BF%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F.png)
 
-Логическая Модель.
+**Логическая Модель.**
 
 ![Логическая](https://github.com/alexanderryabcev/datalearn/blob/main/Module%202/2.4/star/logical.png)
 
-Физическая Модель.
+**Физическая Модель.**
 
 ![Физическая](https://github.com/alexanderryabcev/datalearn/blob/main/Module%202/2.4/star/physical.png)
 
@@ -105,11 +105,14 @@ Average Discount
 
 Данный дашборд разработан с помощью BI инструмента "Yandex Datalens" для базы данных, находящей в облаке "Google Cloud".
 
-Подключение к базе данных.
+**Подключение к базе данных.**
 
-![Подключение]()
+![Подключение](https://github.com/alexanderryabcev/datalearn/blob/main/Module%202/2.6/Connection%20to%20database.png)
 
+**Полученный Dataset, на основании которого будет строиться дашборд**
 
-Полученный Dataset, на основании которого будет строиться дашборд
+![Dataset](https://github.com/alexanderryabcev/datalearn/blob/main/Module%202/2.6/Dataset.png)
 
-![Dataset]()
+**Ссылка на дашборд**
+
+![Дашборд](https://datalens.yandex/zm3zcliojml8q)
