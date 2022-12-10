@@ -1,0 +1,87 @@
+--star.customer_dim
+TRUNCATE TABLE star.customer_dim CASCADE;
+
+INSERT INTO star.customer_dim
+	SELECT DISTINCT customer_id, customer_name
+		FROM public.orders;
+	
+-- star.location_dim
+TRUNCATE TABLE star.location_dim CASCADE;
+
+INSERT INTO star.location_dim
+SELECT row_number() OVER (), country, city, state, postal_code, region
+FROM public.orders
+GROUP BY country, city, state, postal_code, region;
+
+--star.segment_dim
+TRUNCATE TABLE star.segment_dim CASCADE;
+
+INSERT INTO star.segment_dim
+SELECT row_number() OVER (), DISTINCT segment
+FROM public.orders;
+
+ALTER SEQUENCE star.product_dim_id_seq RESTART WITH 1;
+
+--star.product_dim
+TRUNCATE TABLE star.product_dim CASCADE;
+
+INSERT INTO star.product_dim(product_id, product_name, category, sub_category)
+SELECT product_id, product_name, category, subcategory 
+FROM public.orders
+GROUP BY product_id, product_name, category, subcategory;
+
+--star.ship_date_dim
+truncate table star.ship_date_dim CASCADE;
+
+insert into star.ship_date_dim
+select 
+       distinct ship_date,
+       extract(year from ship_date) as "Year", 
+       extract(quarter from ship_date) as "Quater of Year",
+       extract(month from ship_date) as "Month", 
+       CASE 
+       	WHEN extract(day from ship_date) < 8 THEN 1
+       	WHEN extract(day from ship_date) < 15 THEN 2
+       	WHEN extract(day from ship_date) < 22 THEN 3
+       	ELSE 4
+       	END AS "Week",
+       extract(day from ship_date) as "Day"
+FROM public.orders
+UNION
+select 
+       distinct order_date,
+       extract(year from order_date) as "Year", 
+       extract(quarter from order_date) as "Quater of Year",
+       extract(month from order_date) as "Month", 
+       CASE 
+       	WHEN extract(day from order_date) < 8 THEN 1
+       	WHEN extract(day from order_date) < 15 THEN 2
+       	WHEN extract(day from order_date) < 22 THEN 3
+       	ELSE 4
+       	END AS "Week",
+       extract(day from order_date) as "Day"
+FROM public.orders;
+
+--star.sales_fact
+truncate table star.sales_fact;
+
+INSERT INTO star.sales_fact(order_id, location_id, segment_id, customer_id,
+order_date, ship_date, product_id, sales, quantity, discount, profit)
+SELECT o.order_id, l.location_id, s.segment_id, customer_id,
+o.order_date, o.ship_date, p.product_id, o.sales, o.quantity, o.discount, o.profit 
+FROM public.orders o
+INNER JOIN star.location_dim l using(country,city,state,postal_code,region)
+INNER JOIN star.product_dim p on p.product = o.product_id AND p.product_name  = o.product_name  
+INNER JOIN star.segment_dim s on o.segment = s.segment_name;
+
+SELECT COUNT(*) FROM star.sales_fact;
+
+DROP TABLE star.product_dim CASCADE;
+
+SELECT * FROM public.orders o 
+WHERE postal_code IS NULL;
+
+UPDATE public.orders 
+SET postal_code = '05401'
+WHERE postal_code IS NULL AND city = 'Burlington' AND state = 'Vermont';
+
