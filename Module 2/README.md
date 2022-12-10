@@ -58,6 +58,8 @@ Average Discount
 
 ---
 
+
+
 ## 2.4 Модели Данных
 
 ### Модель данных Snowflake
@@ -91,4 +93,8 @@ Average Discount
 
 Ссылка на SQL скрипт для создания схемы и таблиц на базе модели Звезда.
 
-[SQL Скрипт](https://github.com/alexanderryabcev/datalearn/blob/main/Module%202/2.4/star/SQL.txt)
+[SQL скрипт создания таблиц](https://github.com/alexanderryabcev/datalearn/blob/main/Module%202/2.4/star/SQL.txt)
+
+Ссылка на SQL скрипт для заполнения таблиц на базе модели Звезда.
+
+[SQL скрипт заполнения таблиц]()
