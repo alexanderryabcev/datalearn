@@ -115,4 +115,4 @@
 
 **Ссылка на дашборд**
 
-![Дашборд](https://datalens.yandex/zm3zcliojml8q)
+[Дашборд](https://datalens.yandex/zm3zcliojml8q)
