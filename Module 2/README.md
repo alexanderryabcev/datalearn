@@ -98,3 +98,18 @@ Average Discount
 Ссылка на SQL скрипт для заполнения таблиц на базе модели Звезда.
 
 [SQL скрипт заполнения таблиц](https://github.com/alexanderryabcev/datalearn/blob/main/Module%202/2.4/star/SQL%20INSERT.txt)
+
+---
+
+## 2.6 Дашборд на базе Yandex Datalens
+
+Данный дашборд разработан с помощью BI инструмента "Yandex Datalens" для базы данных, находящей в облаке "Google Cloud".
+
+Подключение к базе данных.
+
+![Подключение]()
+
+
+Полученный Dataset, на основании которого будет строиться дашборд
+
+![Dataset]()
